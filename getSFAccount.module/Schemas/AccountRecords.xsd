@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/AccountRecords" xmlns:tns="http://www.example.org/AccountRecords" elementFormDefault="qualified">
+                           <element name="records">
+                                 <complexType>
+                                       <sequence>
+                                             <element name="type" type="string"></element>
+                                             <element name="Id" type="string"></element>
+                                             <element name="Name" type="string"></element>
+                                             <element name="AccountNumber" type="string"></element>
+                                             <element name="AnnualRevenue" type="string"></element>
+                                             <element name="BillingCity" type="string"></element>
+                                             <element name="BillingState" type="string"></element>
+                                       </sequence>
+                                 </complexType>
+                           </element>
+
+    <element name="update">
+    	<complexType>
+    		<sequence>
+    			<element name="name" type="string"></element>
+    			<element name="billingcity" type="string"></element>
+    		</sequence>
+    	</complexType></element>
+</schema>

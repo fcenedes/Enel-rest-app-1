@@ -1,0 +1,65 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "Summary about the new REST service.",
+    "description" : "Summary about the new REST service."
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/getaccount" : {
+      "get" : {
+        "description" : "",
+        "operationId" : "get-getaccountaccountName",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "accountName",
+          "in" : "query",
+          "description" : "",
+          "type" : "string",
+          "required" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a records to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/records"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "records" : {
+      "type" : "object",
+      "required" : [ "BillingCity", "Id", "type", "AnnualRevenue", "BillingState", "Name", "AccountNumber" ],
+      "properties" : {
+        "type" : {
+          "type" : "string"
+        },
+        "Id" : {
+          "type" : "string"
+        },
+        "Name" : {
+          "type" : "string"
+        },
+        "AccountNumber" : {
+          "type" : "string"
+        },
+        "AnnualRevenue" : {
+          "type" : "string"
+        },
+        "BillingCity" : {
+          "type" : "string"
+        },
+        "BillingState" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

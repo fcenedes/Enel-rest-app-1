@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SFIntegration
+Bundle-SymbolicName: getSFAccount
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: TIBCO Software Inc.
+TIBCO-BWCE-Edition-Target: docker
+TIBCO-BW-Edition: bwcf
+TIBCO-BW-ConfigProfile: META-INF/default.substvar
+TIBCO-BW-Version: 1.0.1 V23 2016-08-10
+TIBCO-BW-Application: META-INF/TIBCO.xml
