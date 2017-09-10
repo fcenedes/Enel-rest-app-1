@@ -5,7 +5,7 @@ pipeline {
       steps {
         parallel(
           "Compile": {
-            sh 'cd *.parent ;; mvn clean initialize package'
+            sh 'cd *.parent && mvn clean initialize package'
             
           },
           "AWS Token": {
@@ -17,12 +17,12 @@ pipeline {
     }
     stage('Docker build') {
       steps {
-        sh 'cd *.parent ;; mvn initialize docker:build'
+        sh 'cd *.parent && mvn initialize docker:build'
       }
     }
     stage('Docker Push') {
       steps {
-        sh 'cd *.parent ;; mvn initialize docker:push'
+        sh 'cd *.parent && mvn initialize docker:push'
       }
     }
   }
