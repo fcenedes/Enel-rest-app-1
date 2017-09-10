@@ -18,7 +18,12 @@ pipeline {
     }
     stage('Run') {
       steps {
-        sh 'aws ecs run-task --cluster BWECS --task-definition getsfaccount:4'
+        sh 'aws ecs run-task --cluster BWECS --task-definition getsfaccount:4 > run.json'
+      }
+    }
+    stage('Check') {
+      steps {
+        sh 'aws ecs wait tasks-running --cluster BWECS --tasks $(cat run.json | jq \'.tasks[0].taskArn\' | sed -e \'s/^"//\' -e \'s/"$//\')'
       }
     }
   }
