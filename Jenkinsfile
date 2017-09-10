@@ -13,7 +13,7 @@ pipeline {
     }
     stage('Push') {
       steps {
-        sh 'cd *.parent && mvn docker:push'
+        sh 'cd *.parent && mvn initialize docker:push'
       }
     }
     stage('Run') {
