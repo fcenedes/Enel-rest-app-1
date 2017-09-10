@@ -1,23 +1,24 @@
 pipeline {
   agent any
   stages {
-    stage('Compile') {
+    stage('Prepare') {
       steps {
-        parallel(
-          "Package and Docker Build": {
-            sh 'cd *.parent && mvn clean initialize package docker:build'
-            
-          },
-          "AWS Token": {
-            sh 'aws ecr get-login --no-include-email --region eu-west-1  | sh -'
-            
-          }
-        )
+        sh 'aws ecr get-login --no-include-email --region eu-west-1  | sh -'
       }
     }
-    stage('Docker Push') {
+    stage('Build') {
       steps {
-        sh 'cd *.parent && mvn initialize docker:push'
+        sh 'cd *.parent && mvn clean initialize package docker:build'
+      }
+    }
+    stage('Push') {
+      steps {
+        sh 'cd *.parent && mvn docker:push'
+      }
+    }
+    stage('Run') {
+      steps {
+        sh 'aws ecs run-task --cluster BWECS --task-definition getsfaccount:4'
       }
     }
   }
