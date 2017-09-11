@@ -18,7 +18,7 @@ pipeline {
     }
     stage('Run') {
       steps {
-        sh 'aws ecs run-task --cluster BWECS --task-definition getsfaccount:4 > run.json'
+        sh 'aws ecs run-task --cluster BWECS --task-definition getsfaccount:5 > run.json'
       }
     }
     stage('Check') {
