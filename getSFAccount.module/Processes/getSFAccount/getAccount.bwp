@@ -378,8 +378,9 @@
     </tibex:Types>
     <tibex:ProcessInfo callable="false" createdBy="ivano"
         createdOn="Thu Aug 31 17:25:40 CEST 2017" description=""
-        modifiers="public" productVersion="1.0.5 V30 2017-04-21"
-        scalable="true" singleton="true" stateless="true" type="IT"/>
+        extraErrorVars="false" modifiers="public"
+        productVersion="1.0.5 V30 2017-04-21" scalable="true"
+        singleton="true" stateless="true" type="IT"/>
     <tibex:ProcessInterface context="" input="" output=""/>
     <tibex:ProcessTemplateConfigurations/>
     <notation:Diagram measurementUnit="Pixel" type="BWProcess"
@@ -936,11 +937,15 @@
                                     fontName=".SF NS Text"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
                                     <styles xsi:type="bwnotation:BackgroundStyle"/>
-                                    <styles xsi:type="bwnotation:ResizingStyle"/>
+                                    <styles
+                                    restoreHeight="279"
+                                    restoreWidth="486"
+                                    restoreX="2" xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.0"/>
                                     <layoutConstraint
-                                    height="140"
-                                    width="485" xsi:type="notation:Bounds"/>
+                                    height="279"
+                                    width="485"
+                                    x="2" xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
